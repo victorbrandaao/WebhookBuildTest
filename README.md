@@ -1,46 +1,47 @@
-# TestWebhook
+# TestWebhook - Integração C# com n8n e Super Agente
 
-Este projeto C# demonstra a integração com um webhook do n8n e um "super agente". Ele envia uma requisição para o n8n, recebe a resposta e, em seguida, encaminha essa resposta para o super agente.
+Este projeto C# demonstra a integração entre um aplicativo, um webhook do n8n e um "Super Agente". Ele envia uma requisição para o n8n, recebe a resposta processada e a encaminha para o Super Agente para executar ações específicas.
 
-## Pré-requisitos
+## 🚀 Pré-requisitos
 
 *   .NET SDK instalado
-*   Um ambiente n8n configurado com um webhook ativo
-*   Um "super agente" com um endpoint para receber requisições
+*   Ambiente n8n configurado com um webhook ativo
+*   "Super Agente" com endpoint para receber requisições
 
-## Configuração
+## ⚙️ Configuração
 
-1.  **Substitua as URLs:**
-    *   No arquivo `Program.cs`, substitua `PELOSEUWEBHOOK"` pela URL do seu webhook do n8n.
-    *   Substitua `"http://endereco-do-superagente/api/acao"` pela URL do endpoint do seu super agente.
-2.  **Configure as credenciais (se necessário):**
-    *   Se o super agente exigir autenticação, adicione o código para realizar o login e obter o token de acesso. Substitua `"seuUsuario"` e `"suaSenha"` pelas credenciais corretas.
-3.  **Instale as dependências:**
-    *   Rode o comando `dotnet restore` para instalar as dependências do projeto.
+1.  **Clone o repositório**
+2.  **Substitua as URLs** no `Program.cs`:
+    *   `webhookUrl`: URL do webhook do n8n.
+    *   `superAgenteUrl`: URL do endpoint do Super Agente.
+3.  **Configure a autenticação (se necessário)** no método `AutenticarSuperAgente`.
+4.  **Rode `dotnet restore`** para instalar as dependências.
 
-## Execução
+## ▶️ Execução
 
 1.  Abra o terminal na pasta do projeto.
-2.  Execute o comando `dotnet run`.
+2.  Execute `dotnet run`.
+3.  Verifique a saída no console.
 
-## Explicação do Código
+## 🧩 Explicação do Código
 
-*   O programa envia uma requisição `GET` para o webhook do n8n.
-*   Ele recebe a resposta do n8n e imprime o status code e o corpo da resposta no console.
-*   Em seguida, ele encaminha a resposta para o super agente, enviando uma requisição `POST` para o endpoint configurado.
-*   O programa imprime o status code e o corpo da resposta do super agente no console.
-*   O bloco `try-catch` lida com possíveis erros durante a requisição HTTP.
+O código:
 
-## Integração com o Super Agente
+*   Autentica no Super Agente (opcional).
+*   Envia um `GET` para o webhook do n8n.
+*   Recebe e imprime a resposta do n8n.
+*   Encaminha a resposta para o Super Agente via `POST`.
+*   Imprime a resposta do Super Agente.
+*   Lida com erros de requisição.
 
-Para integrar com o super agente, você precisa:
+## 🤝 Integração com o Super Agente
 
-1.  Certificar-se de que o super agente tem um endpoint para receber requisições.
-2.  Configurar o código C# para enviar os dados corretos para o endpoint do super agente.
-3.  Implementar a lógica no super agente para processar os dados recebidos e executar a ação desejada.
+*   Certifique-se de que o Super Agente tem um endpoint para receber requisições.
+*   Configure o código C# para enviar os dados corretos.
+*   Implemente a lógica no Super Agente para processar os dados.
 
-## Observações
+## ⚠️ Observações
 
-*   Este é um exemplo básico. Você pode precisar adaptá-lo para atender aos seus requisitos específicos.
-*   Certifique-se de que o n8n está configurado corretamente para receber a requisição e processá-la.
-*   Mantenha suas credenciais em segurança. Não as compartilhe com ninguém e não as inclua diretamente no seu código.
+*   Adapte o código para seus requisitos.
+*   Configure o n8n corretamente.
+*   Mantenha as credenciais em segurança.
