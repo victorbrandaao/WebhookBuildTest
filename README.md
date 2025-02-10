@@ -11,7 +11,7 @@ Este projeto C# demonstra a integração com um webhook do n8n e um "super agent
 ## Configuração
 
 1.  **Substitua as URLs:**
-    *   No arquivo `Program.cs`, substitua `"PELOSEUWEBHOOK"` pela URL do seu webhook do n8n.
+    *   No arquivo `Program.cs`, substitua `PELOSEUWEBHOOK"` pela URL do seu webhook do n8n.
     *   Substitua `"http://endereco-do-superagente/api/acao"` pela URL do endpoint do seu super agente.
 2.  **Configure as credenciais (se necessário):**
     *   Se o super agente exigir autenticação, adicione o código para realizar o login e obter o token de acesso. Substitua `"seuUsuario"` e `"suaSenha"` pelas credenciais corretas.
